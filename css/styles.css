@@ -1,0 +1,9 @@
+.background_picture{
+    height: 700px;
+    width: auto;
+    opacity: 0.5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/large pizza.jpg');
+  }
