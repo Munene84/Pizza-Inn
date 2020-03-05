@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Edwin pizza place</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/bootstrap-input-spinner.js"></script>
     <script src="js/scripts.js"></script>
   </head>
   <body>
@@ -24,7 +23,7 @@
 
 <p>Chose the size you prefer:</p>
 
-<form action="/action_page.php">
+<form action="" id="myForm">
   <label for="pizza_size">Choose pizza size:</label>
   <select id="pizza_size" name="pizza_size" class="pizza_size">
     <div class="small">
@@ -43,12 +42,11 @@
       <small class="form-text text-muted">KCS: 1200.</small>
   </div>
   </select>
-</form>
+
 <h2>Pizza crust</h2>
 
 <p>Chose the type of crust you prefer:</p>
 
-<form action="/action_page.php">
   <label for="pizza_crust">Choose pizza crust:</label>
   <select id="pizza_crust" name="pizza_crust" class="pizza_crust">
     <div>
@@ -67,12 +65,10 @@
       <small class="form-text text-muted">KCS: +70.</small>
   </div>
   </select>
-</form>
 <h2>Pizza toppings</h2>
 
 <p>Chose the type of toppings you prefer:</p>
 
-<form action="/action_page.php">
   <label for="pizza_topping">Choose pizza toppings:</label>
   <select id="pizza_topping" name="pizza_topping" class="pizza_topping">
     <div>
@@ -142,17 +138,18 @@
   <h2>Pizza delivery</h2>
 
 <p>Chose whether to be delivered or not:</p>
-  <form action="/action_page.php">
+  <form action="" id="Form">
     <label for="pizza_delivery">Choose delivery:</label>
     <select id="pizza_delivery" name="pizza_delivery">
       <option value="deliver">deliver</option>
       <option value="Do not deliver">Do not deliver</option>
     </select>
+
+    <button type="checkout" class="btn btn-info" ><b>CHECKOUT</b></button>
   </form>
-</div><br><br>
-<div class="col-md-12">
-  <button type="checkout" class="btn btn-info" ><b>CHECKOUT</b></button>
 </div>
-      </div>
+</div>
+</div>
+      
   </body>
 </html>

@@ -1,108 +1,97 @@
-var pizza_sizePrice, pizza_crustPrice, pizza_toppingPrice;
+var total=0;
 
-function pizza_sizeSelect(pizza_size){
-    this.pizza_size=pizza_size;
-}
-
-function pizza_crustSelect(pizza_crust){
-    this.pizza_crust=pizza_crust;
-}
-function pizza_toppingSelect(pizza_topping){
-    this.pizza_topping=pizza_topping;
+function Pizza(size,crust,topping,number){
+    this.size=size;
+    this.crust=crust;
+    this.topping=topping;
+    this.number=number;
 }
 
-function pizza_numberSelect(pizza_number){
-    this.pizza_number=pizza_number;
+
+function checkout(size,crust,topping,number){
+
+    switch (size){
+        case ("small"):
+            total=total+(500 *number);
+            break;
+        case ("medium"):
+            total=total+(1000 *number)
+            break;
+        case ("large"):
+            total=total+(1200 *number);
+            break;
+    }
+    switch (crust){
+        case ("crispy"):
+            total=total+(90 *number);
+            break;
+        case ("stuffed"):
+            total=total+(80 *number)
+            break;
+        case ("gluten-free"):
+            total=total+(70 *number);
+            break;
+    }
+
+    switch (topping){
+        case ("peperoni"):
+            total=total+(20 *number);
+            break;
+        case ("beef"):
+            total=total+(50 *number)
+            break;
+        case ("bacon"):
+            total=total+(40 *number);
+            break;
+        case ("Mushrooms"):
+            total=total+(25 *number);
+            break;
+        case ("Sausage"):
+            total=total+(30 *number);
+            break;
+        case ("Onions"):
+            total=total+(15 *number);
+            break;
+        case ("Extra cheese"):
+            total=total+(35 *number);
+            break;
+        case ("Black olives"):
+            total=total+(45 *number);
+            break;
+        case ("Green peppers"):
+            total=total+(10 *number);
+            break;
+        case ("Pineapple"):
+            total=total+(55 *number);
+            break;
+        case ("Spinach"):
+            total=total+(5 *number);
+            break;
+    }
+
+
 }
 
-function finalPrice(){
-    var finalPrice = pizza_sizeSelect()+pizza_crustSelect()+pizza_toppingSelect()*pizza_numberSelect();
-    return finalPrice;
-}
+
 $(document).ready(function(){
 
 
-    $(".pizza_size").click(function(){
-        var selectedSize = $("input[name='pizza_size']:checked").val();
-        if(selectedSize=='small'){
-         sizePrice = 500;
-         }
-         else if(selectedSize=='medium'){
-             sizePrice = 1000;
-          }
-          else if(selectedSize=='large'){
-             sizePrice = 1200;
-          }
-          pizza_size = sizePrice;
-          console.log(pizza_size);
-    });
- 
- 
-     $(".pizza_crust").click(function(){
-         var selectedCrust = $("input[name='pizza_crust']:checked").val();
-         if(selectedCrust=='crispy'){
-             crustPrice = 90;
-         }
-         else if(selectedCrust=='stuffed'){
-             crustPrice = 80;
-         }
-         else if(selectedCrust=='gluten-free'){
-             crustPrice = 70;
-         }
-         pizza_crust = crustPrice;
-         console.log(crustPrice);
-     });
-     $(".pizza_topping").click(function(){
-        var selectedTopping = $("input[name='pizza_topping']:checked").val();
-        if(selectedCrust=='peperoni'){
-            toppingPrice = 20;
-        }
-        else if(selectedTopping=='beef'){
-            toppingPrice = 50;
-        }
-        else if(selectedTopping=='bacon'){
-            toppingPrice = 40;
-        }
-        else if(selectedTopping=='Mushrooms'){
-            toppingPrice = 25;
-        }
-        else if(selectedTopping=='Sausage'){
-            toppingPrice = 30;
-        }
-        else if(selectedTopping=='Onions'){
-            toppingPrice = 15;
-        }
-        else if(selectedTopping=='Extra cheese'){
-            toppingPrice = 35;
-        }
-        else if(selectedTopping=='Black olives'){
-            toppingPrice = 45;
-        }
-        else if(selectedTopping=='Green peppers'){
-            toppingPrice = 10;
-        }
-        else if(selectedTopping=='Pineapple'){
-            toppingPrice = 55;
-        }
-        else if(selectedTopping=='Spinach'){
-            toppingPrice = 5;
-        }
-        pizza_topping = toppingPrice;
-        console.log(toppingPrice);
-    });
-    $("#pizza_number").change(function(){
-        var selectedNumber = $("#pizza_number").val();
-        pieces = selectedPizzaNumber;
-        console.log(pieces);
+    $("#myForm").submit(function(e){
 
-});
-});
-$(document).ready(function(){
-    $("form").submit(function(){
-        var pizza_sizePrice= $("#pizza_size").val();
-        var pizza_crustPrice = $("#pizza_crust").val();
-        var pizza_toppingPrice = $("#pizza_topping").val();
+        e.preventDefault();
+        var size = $("#pizza_size").val();
+        var crust = $("#pizza_crust").val();
+        var topping = $("#pizza_topping").val();
+        var number = parseInt($("#pizza_number").val());
 
-        alert(finalPrice+' thanks for order');
+        var newPizza = new Pizza(size,crust,topping,number);
+        checkout(size,crust,topping,number)
+        
+        alert(total);
+        
+
     });
+
+    
+
 });
