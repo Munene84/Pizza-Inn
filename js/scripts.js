@@ -85,13 +85,26 @@ $(document).ready(function(){
         var number = parseInt($("#pizza_number").val());
 
         var newPizza = new Pizza(size,crust,topping,number);
-        checkout(size,crust,topping,number)
-        
+        checkout(size,crust,topping,number);
         alert(total);
+        
+    
         
 
     });
+    $("#Form").submit(function(e){
 
+        e.preventDefault();
+        var delivery = $("#pizza_delivery").val();
+        if (delivery==='delivery') {
+            total=total+200;
+          }
+        
+        alert(total);
+        
+    
+    });
+    
     
 
 });
