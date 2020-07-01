@@ -2,7 +2,7 @@
 landing page for a fictional pizza inn
 web application where customers order different sizes of pizzas with one or more toppings.
 
-# Owner name: Munene84
+# Owner name: [Edwin Munene](https://github.com/Munene84)
 
 
 # Instructions:
